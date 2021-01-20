@@ -19,16 +19,16 @@ We plan on having every user have an account for this application.
   - Each account would have some form of stats of how much they either threw away, or recycled.
 - Each user could navigate around the map and see for any garbage disposal locations near them in realtime.
 
-## UI/FrontEnd/Backend Goals
+# UI/FrontEnd/Backend Goals
 
-# FrontEnd
+## FrontEnd
   - Use Flutter with Dart or Javascript to make the design of the project
   - Also use Google Maps API, perhaps Geolocation or general map API for the user to be able to use and navigate around.
-# UI
+## UI
   - Use Glass marker style for transparency for user viewing satisfaction
-# BackEnd
+## BackEnd
   - Use SQLite as our backend technology to keep track of custom locations of garbage locations.
 
 
-## Issues
+# Issues
 - Auto Layout could be an issue

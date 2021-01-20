@@ -1,7 +1,9 @@
-# Garbage-Disposal-Locations-App
+# Garbage-Disposal-Locations-App For CUNY Hackathon of 2021 @Jan23-24
 ## Team Members
 - Farhene Sultana
-- Other members, add your names here :3 
+- Nishanth Prajith
+- Maisa Ahmed
+- Justin Siu
 
 ## How to Run Program
 - Install Flutter on Computer or PC by going to this website [Flutter.dev](https://flutter.dev/docs/get-started/install)

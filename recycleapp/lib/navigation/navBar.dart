@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'all.dart';
 
 class BottomNav extends StatefulWidget {
 
@@ -77,24 +76,21 @@ class _BottomNavState extends State<BottomNav> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               IconButton(
-              icon: Icon(
-                Icons.account_circle_outlined,
-                size: 30,
-                color: control == 2 ? Colors.green : Colors.black
+                icon: Icon(
+                  Icons.account_circle_outlined,
+                  size: 30,
+                  color: control == 2 ? Colors.green : Colors.black
+                ),
+                onPressed: () {
+                  print("2");
+                  setState(() {
+                    control = 2;
+                  });
+                }
               ),
-              onPressed: () {
-                print("2");
-                setState(() {
-                  control = 2;
-                });
-              }
-            ),
               SubText(control, 2, "Account")
             ],
-          ),
-          
-          
-          
+          ),          
         ]
       )
     );

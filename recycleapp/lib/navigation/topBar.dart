@@ -26,7 +26,7 @@ class TopBar extends StatelessWidget {
             child: Icon(
               Icons.eco,
               size: 35,
-              color: Colors.black,
+              color: Colors.green,
             ),
           ),
           Expanded(

@@ -32,3 +32,19 @@ We plan on having every user have an account for this application.
 
 # Issues
 - Auto Layout could be an issue
+- Google Maps could not be previewed on the app
+- Doesn't have the desktop embedding, well limited in terms of Google Maps API
+  - Nishanth keeps getting compatability errors or Null error.
+
+
+# Things to do
+- Update the loading screen 
+- Fix up the Google Maps Preview (shows orange instead) using Google Maps API
+   - Google Maps APi has markers we could use.
+   - We can put custom locations and then using user location we can sort out the closest garbage location near them.
+   - We can style the map that we are using mapstyle with like Google.com
+      - We can customize general colorscapes of the features on the map.
+      - We get a json file to copy and paste to flutter and the map will be rendered.
+- Find data or put in custom data of garbage disposal locations
+- Fixing UI layout and how will it look with the map?
+- Add sign-in authentication (bonus)

@@ -48,3 +48,9 @@ We plan on having every user have an account for this application.
 - Find data or put in custom data of garbage disposal locations
 - Fixing UI layout and how will it look with the map?
 - Add sign-in authentication (bonus)
+
+# Help
+To run this project, you must be in the flutter channel dev, not in the beta, nor master, nor stable channels.
+- To check your flutter channel, type in your terminal: "flutter channel"
+- To switch over channels, type in your terminal: "flutter channel dev"
+  - If your computer fails to switch due to error code 1 or git aborting issues, check out this link: [Fix Flutter Channel Switching Here](https://stackoverflow.com/questions/61659910/flutter-error-unable-to-create-dart-snapshot-for-flutter-tool/62140885#62140885?newreg=deb25020c7d1466b8370c7017491bda3)

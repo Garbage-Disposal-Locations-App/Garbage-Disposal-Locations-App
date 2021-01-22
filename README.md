@@ -2,7 +2,7 @@
 ## Team Members
 - Farhene Sultana
 - Nishanth Prajith
-- Maisa Ahmed
+- Maisa Ahmad
 - Justin Siu
 
 ## How to Run Program

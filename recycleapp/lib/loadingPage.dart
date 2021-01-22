@@ -114,7 +114,7 @@ class _FirstLoadState extends State<FirstLoad> with TickerProviderStateMixin {
   void initState() {
     _animationControl = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 3)
+      duration: Duration(seconds: 2)
     );
     _animationControl2 = AnimationController(
       vsync: this, 
@@ -134,13 +134,6 @@ class _FirstLoadState extends State<FirstLoad> with TickerProviderStateMixin {
     _animationControl.dispose();
     super.dispose();
   }
-
-  Text make(AsyncSnapshot snapshot) {
-    return snapshot.data.documents.map((document) {
-      return Text("DATA");
-    });
-  }
-
 
   Widget build(BuildContext context) {
     return FadeTransition(

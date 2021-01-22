@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
+import 'all.dart';
 
 class BottomNav extends StatefulWidget {
-
-  _BottomNavState createState() => _BottomNavState();
+  final control;
+  BottomNav(this.control);
+  _BottomNavState createState() => _BottomNavState(control);
 }
 
 class SubText extends StatelessWidget {
-  int current;
-  int actual;
-  String text;
+  final int current;
+  final int actual;
+  final String text;
   SubText(this.current, this.actual, this.text);
   Widget build(BuildContext context) {
     if (this.current == this.actual) {
@@ -25,7 +28,9 @@ class SubText extends StatelessWidget {
 }
 
 class _BottomNavState extends State<BottomNav> {
-  int control = 1;
+  final int control;
+  _BottomNavState(this.control);
+  
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -44,10 +49,13 @@ class _BottomNavState extends State<BottomNav> {
                 ),
 
                 onPressed: () {
-                  print("0");
-                  setState(() {
-                    control = 0;
-                  });
+                  Navigator.push(
+                    context, PageTransition(
+                      child: StatsPage(),
+                      type: PageTransitionType.fade,
+                      duration: Duration(milliseconds: 600)
+                    )
+                  );
                 }
               ),
               SubText(control, 0, "History")
@@ -63,10 +71,13 @@ class _BottomNavState extends State<BottomNav> {
                   color: control == 1 ? Colors.green : Colors.black
                 ),
                 onPressed: () {
-                  print("1");
-                  setState(() {
-                    control = 1;
-                  });
+                  Navigator.push(
+                    context, PageTransition(
+                      child: HomePage(),
+                      type: PageTransitionType.fade,
+                      duration: Duration(milliseconds: 600)
+                    )
+                  );
                 }
               ),
               SubText(control, 1, "Map")
@@ -83,9 +94,6 @@ class _BottomNavState extends State<BottomNav> {
                 ),
                 onPressed: () {
                   print("2");
-                  setState(() {
-                    control = 2;
-                  });
                 }
               ),
               SubText(control, 2, "Account")

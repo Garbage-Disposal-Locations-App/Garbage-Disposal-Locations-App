@@ -2,6 +2,12 @@ import 'package:flutter/material.dart';
 import 'dart:ui';
 
 class TopBar extends StatelessWidget {
+  final double one;
+  final double two;
+  final double three;
+  final Color col;
+  const TopBar(this.one, this.two, this.three, this.col);
+ 
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
@@ -11,12 +17,12 @@ class TopBar extends StatelessWidget {
           bottomLeft: Radius.circular(45),
           bottomRight: Radius.circular(45)
         ),
-        border: Border.all(color: Colors.white.withOpacity(0.6)),
+        border: Border.all(color: Colors.white.withOpacity(three)),
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [Colors.white.withOpacity(0.4), Colors.white.withOpacity(0.2)]
-        )
+          colors: [Colors.white.withOpacity(one), Colors.white.withOpacity(two)]
+        ),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -26,7 +32,7 @@ class TopBar extends StatelessWidget {
             child: Icon(
               Icons.eco,
               size: 35,
-              color: Colors.green,
+              color: col
             ),
           ),
           Expanded(
@@ -37,6 +43,7 @@ class TopBar extends StatelessWidget {
             flex: 2,
             child: CircleAvatar(
               backgroundColor: Colors.grey.shade800,
+              foregroundColor: Colors.white,
               child: Text('M'),
             )
           ),

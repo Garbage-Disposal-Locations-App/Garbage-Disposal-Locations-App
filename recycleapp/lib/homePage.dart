@@ -44,11 +44,11 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Expanded(
                     flex: 1,
-                    child: BottomNav()
+                    child: BottomNav(1)
                   )
                 ]
               ),
-              TopBar(),
+              TopBar(0.6, 0.05, 0.6, Color(0xff58a31f)),
             ]
           )
         )

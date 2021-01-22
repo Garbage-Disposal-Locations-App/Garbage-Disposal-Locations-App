@@ -38,6 +38,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "carousel_slider",
+      "rootUri": "file:///C:/Users/nisha/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/carousel_slider-2.3.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.6"
+    },
+    {
       "name": "characters",
       "rootUri": "file:///C:/Users/nisha/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/characters-1.1.0-nullsafety.5",
       "packageUri": "lib/",
@@ -434,7 +440,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-01-22T09:48:39.516598Z",
+  "generated": "2021-01-22T14:12:22.665806Z",
   "generator": "pub",
   "generatorVersion": "2.12.0-179.0.dev"
 }

@@ -2,30 +2,59 @@ import 'package:flutter/material.dart';
 import 'all.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'dart:io';
 
 class MainUI extends StatefulWidget{
   _MainUIState createState() => _MainUIState();
 }
 
+class TestFunction extends StatelessWidget {
+  Widget build(BuildContext context) {
+    FirebaseFirestore firestore = FirebaseFirestore.instance;
+    CollectionReference users = firestore.collection('TestData');
+    
+    return StreamBuilder<QuerySnapshot>(
+      stream: users.snapshots(),
+      builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+        if (snapshot.hasError) {
+          return Text('Something went wrong');
+        }
+
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return Text("Loading");
+        }
+        List<DocumentSnapshot> d = snapshot.data.docs;
+        return CarouselSlider.builder(
+          itemCount: 2, 
+          itemBuilder: (context, int index) {
+            return Card(d[index]);
+          },
+          options: CarouselOptions(
+            autoPlay: true,
+            enlargeCenterPage: true,
+            viewportFraction: 0.9,
+            aspectRatio: 1.0,
+            initialPage: 0,
+          ),
+        );
+      },
+    );
+  }
+}
+
 class Card extends StatelessWidget {
-  final String title;
-  final int count;
-  final String subText;
-  Card(this.title, this.subText, this.count);
+  final DocumentSnapshot values;
+  Card(this.values);
+  
 
   
 
   Widget build(BuildContext context) {
-    FirebaseFirestore firestore = FirebaseFirestore.instance;
-    CollectionReference users = firestore.collection('TestData');
-    Future<DocumentSnapshot> document = users.doc('MNgZPtY0Y8LePIKjtbJw').get();
-    print(document);
-
+    final Map <String, dynamic> doc = values.data;
+    double value = MediaQuery.of(context).size.width;
     return Container( 
-      width: double.maxFinite,
-      height: double.maxFinite,
-      margin: EdgeInsets.all(2.0), 
-      padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+      width: (value / 10) * 8, 
+      margin: EdgeInsets.fromLTRB((value / 10) * 0.5, 0, 50, 50),
       decoration: BoxDecoration( 
         borderRadius: BorderRadius.circular(50.0),
         color: Colors.white,
@@ -52,7 +81,7 @@ class Card extends StatelessWidget {
           ),
           Expanded(
             flex: 8,
-            child: SizedBox(),
+            child: SizedBox()
           ),
           Expanded(
             flex: 3,
@@ -112,26 +141,7 @@ class _MainUIState extends State<MainUI> {
         ),
         Expanded ( 
           flex: 9,
-          child: ListView( 
-          children: [ 
-            CarouselSlider( 
-                items: [ 
-                  Card("Plastic", "plastic", 135),
-                  Card("Paper", "paper", 20),
-                  Card("Glass", "glass", 100)
-                ], 
-              //Slider Container properties 
-                options: CarouselOptions( 
-                  height: (MediaQuery.of(context).size.height / 8) * 5, 
-                  enlargeCenterPage: true, 
-                  autoPlayCurve: Curves.fastOutSlowIn, 
-                  enableInfiniteScroll: false, 
-                  autoPlayAnimationDuration: Duration(milliseconds: 800), 
-                  viewportFraction: 0.8, 
-                ), 
-              ), 
-            ], 
-          ),
+          child: TestFunction()          
         ),
       ],
     );

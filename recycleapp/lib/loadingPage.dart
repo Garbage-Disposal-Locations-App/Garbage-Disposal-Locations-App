@@ -17,7 +17,7 @@ class _SecondLoadState extends State<SecondLoad> with TickerProviderStateMixin {
       vsync: this,
       duration: Duration(seconds: 2)
     );
-    Timer(Duration(seconds: 7), () => _animationControl.forward());
+    Timer(Duration(seconds: 4), () => _animationControl.forward());
     super.initState();
   }
 
@@ -57,7 +57,7 @@ class _SecondLoadState extends State<SecondLoad> with TickerProviderStateMixin {
 
                       ),
                       new TextSpan(
-                        text: " save out home",
+                        text: " save our home",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                         )

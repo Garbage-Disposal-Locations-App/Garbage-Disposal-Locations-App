@@ -1,0 +1,229 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.recycleapp"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="30" />
+10    <!--
+11         Flutter needs it to communicate with the running application
+12         to allow setting breakpoints, to provide hot reload, etc.
+13    -->
+14    <uses-permission android:name="android.permission.INTERNET" />
+14-->C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\android\app\src\debug\AndroidManifest.xml:6:5-66
+14-->C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\android\app\src\debug\AndroidManifest.xml:6:22-64
+15    <!-- Include required permissions for Google Maps API to run. -->
+16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+16-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\f6434d6edb2b5493051c45e189401dee\jetified-play-services-maps-17.0.0\AndroidManifest.xml:23:5-79
+16-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\f6434d6edb2b5493051c45e189401dee\jetified-play-services-maps-17.0.0\AndroidManifest.xml:23:22-76
+17
+18    <uses-feature
+18-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\f6434d6edb2b5493051c45e189401dee\jetified-play-services-maps-17.0.0\AndroidManifest.xml:26:5-28:35
+19        android:glEsVersion="0x00020000"
+19-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\f6434d6edb2b5493051c45e189401dee\jetified-play-services-maps-17.0.0\AndroidManifest.xml:27:9-41
+20        android:required="true" />
+20-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\f6434d6edb2b5493051c45e189401dee\jetified-play-services-maps-17.0.0\AndroidManifest.xml:28:9-32
+21
+22    <uses-permission android:name="android.permission.WAKE_LOCK" />
+22-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\5e9ca142fe4e24742d7d6257557384ca\jetified-play-services-measurement-api-18.0.0\AndroidManifest.xml:24:5-68
+22-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\5e9ca142fe4e24742d7d6257557384ca\jetified-play-services-measurement-api-18.0.0\AndroidManifest.xml:24:22-65
+23    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+23-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\9a3224ac64ff705c59c858b9cb9d100d\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:26:5-110
+23-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\9a3224ac64ff705c59c858b9cb9d100d\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:26:22-107
+24
+25    <application
+25-->C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\android\app\src\main\AndroidManifest.xml:3:4-44:19
+26        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+26-->[androidx.core:core:1.1.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\8f4ff03bea5b0cbac84f5cca9661a7c3\core-1.1.0\AndroidManifest.xml:24:18-86
+27        android:debuggable="true"
+28        android:icon="@mipmap/ic_launcher"
+28-->C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\android\app\src\main\AndroidManifest.xml:5:9-43
+29        android:label="recycleapp" >
+29-->C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\android\app\src\main\AndroidManifest.xml:4:9-35
+30        <activity
+30-->C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\android\app\src\main\AndroidManifest.xml:8:9-36:20
+31            android:name="com.example.recycleapp.MainActivity"
+31-->C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\android\app\src\main\AndroidManifest.xml:9:13-41
+32            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+32-->C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\android\app\src\main\AndroidManifest.xml:12:13-163
+33            android:hardwareAccelerated="true"
+33-->C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\android\app\src\main\AndroidManifest.xml:13:13-47
+34            android:launchMode="singleTop"
+34-->C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\android\app\src\main\AndroidManifest.xml:10:13-43
+35            android:theme="@style/LaunchTheme"
+35-->C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\android\app\src\main\AndroidManifest.xml:11:13-47
+36            android:windowSoftInputMode="adjustResize" >
+36-->C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\android\app\src\main\AndroidManifest.xml:14:13-55
+37
+38            <!--
+39                 Specifies an Android theme to apply to this Activity as soon as
+40                 the Android process has started. This theme is visible to the user
+41                 while the Flutter UI initializes. After that, this theme continues
+42                 to determine the Window background behind the Flutter UI.
+43            -->
+44            <meta-data
+44-->C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\android\app\src\main\AndroidManifest.xml:19:13-22:17
+45                android:name="io.flutter.embedding.android.NormalTheme"
+45-->C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\android\app\src\main\AndroidManifest.xml:20:15-70
+46                android:resource="@style/NormalTheme" />
+46-->C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\android\app\src\main\AndroidManifest.xml:21:15-52
+47            <!--
+48                 Displays an Android View that continues showing the launch screen
+49                 Drawable until Flutter paints its first frame, then this splash
+50                 screen fades out. A splash screen is useful to avoid any visual
+51                 gap between the end of Android's launch screen and the painting of
+52                 Flutter's first frame.
+53            -->
+54            <meta-data
+54-->C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\android\app\src\main\AndroidManifest.xml:28:13-31:17
+55                android:name="io.flutter.embedding.android.SplashScreenDrawable"
+55-->C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\android\app\src\main\AndroidManifest.xml:29:15-79
+56                android:resource="@drawable/launch_background" />
+56-->C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\android\app\src\main\AndroidManifest.xml:30:15-61
+57
+58            <intent-filter>
+58-->C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\android\app\src\main\AndroidManifest.xml:32:13-35:29
+59                <action android:name="android.intent.action.MAIN" />
+59-->C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\android\app\src\main\AndroidManifest.xml:33:17-68
+59-->C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\android\app\src\main\AndroidManifest.xml:33:25-66
+60
+61                <category android:name="android.intent.category.LAUNCHER" />
+61-->C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\android\app\src\main\AndroidManifest.xml:34:17-76
+61-->C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\android\app\src\main\AndroidManifest.xml:34:27-74
+62            </intent-filter>
+63        </activity>
+64        <!--
+65             Don't delete the meta-data below.
+66             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+67        -->
+68        <meta-data
+68-->C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\android\app\src\main\AndroidManifest.xml:39:9-41:33
+69            android:name="flutterEmbedding"
+69-->C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\android\app\src\main\AndroidManifest.xml:40:13-44
+70            android:value="2" />
+70-->C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\android\app\src\main\AndroidManifest.xml:41:13-30
+71        <meta-data
+71-->C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\android\app\src\main\AndroidManifest.xml:42:9-43:73
+72            android:name="com.google.android.geo.API_KEY"
+72-->C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\android\app\src\main\AndroidManifest.xml:42:20-65
+73            android:value="AIzaSyDe1Gi9pLZ0wQt8wIRxa3S2l3geMfo07I4" />
+73-->C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\android\app\src\main\AndroidManifest.xml:43:16-71
+74
+75        <service
+75-->[:cloud_firestore] C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
+76            android:name="com.google.firebase.components.ComponentDiscoveryService"
+76-->[:cloud_firestore] C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:8:18-89
+77            android:directBootAware="true"
+77-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\a8e7753e0381cbd80113452173226a76\jetified-firebase-common-19.5.0\AndroidManifest.xml:35:13-43
+78            android:exported="false" >
+78-->[com.google.firebase:firebase-firestore:22.0.1] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\dbcaa3f742af4f805bbfc60dd226f87d\jetified-firebase-firestore-22.0.1\AndroidManifest.xml:19:13-37
+79            <meta-data
+79-->[:cloud_firestore] C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+80                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
+80-->[:cloud_firestore] C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-134
+81                android:value="com.google.firebase.components.ComponentRegistrar" />
+81-->[:cloud_firestore] C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+82            <meta-data
+82-->[:firebase_core] C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+83                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
+83-->[:firebase_core] C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-124
+84                android:value="com.google.firebase.components.ComponentRegistrar" />
+84-->[:firebase_core] C:\Users\Justin Siu\Desktop\TEST\Garbage-Disposal-Locations-App\recycleapp\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+85            <meta-data
+85-->[com.google.firebase:firebase-firestore:22.0.1] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\dbcaa3f742af4f805bbfc60dd226f87d\jetified-firebase-firestore-22.0.1\AndroidManifest.xml:20:13-22:85
+86                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+86-->[com.google.firebase:firebase-firestore:22.0.1] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\dbcaa3f742af4f805bbfc60dd226f87d\jetified-firebase-firestore-22.0.1\AndroidManifest.xml:21:17-111
+87                android:value="com.google.firebase.components.ComponentRegistrar" />
+87-->[com.google.firebase:firebase-firestore:22.0.1] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\dbcaa3f742af4f805bbfc60dd226f87d\jetified-firebase-firestore-22.0.1\AndroidManifest.xml:22:17-82
+88            <meta-data
+88-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\5e9ca142fe4e24742d7d6257557384ca\jetified-play-services-measurement-api-18.0.0\AndroidManifest.xml:30:13-32:85
+89                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+89-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\5e9ca142fe4e24742d7d6257557384ca\jetified-play-services-measurement-api-18.0.0\AndroidManifest.xml:31:17-139
+90                android:value="com.google.firebase.components.ComponentRegistrar" />
+90-->[com.google.android.gms:play-services-measurement-api:18.0.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\5e9ca142fe4e24742d7d6257557384ca\jetified-play-services-measurement-api-18.0.0\AndroidManifest.xml:32:17-82
+91            <meta-data
+91-->[com.google.firebase:firebase-installations:16.3.5] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\77d675542b39e6f59fe187bc189e4ea5\jetified-firebase-installations-16.3.5\AndroidManifest.xml:18:13-20:85
+92                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+92-->[com.google.firebase:firebase-installations:16.3.5] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\77d675542b39e6f59fe187bc189e4ea5\jetified-firebase-installations-16.3.5\AndroidManifest.xml:19:17-127
+93                android:value="com.google.firebase.components.ComponentRegistrar" />
+93-->[com.google.firebase:firebase-installations:16.3.5] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\77d675542b39e6f59fe187bc189e4ea5\jetified-firebase-installations-16.3.5\AndroidManifest.xml:20:17-82
+94            <!--
+95                This registrar is not defined in the dynamic-module-support sdk itself to allow non-firebase
+96                clients to use it as well, by defining this registrar in their own core/common library.
+97            -->
+98            <meta-data
+98-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\a8e7753e0381cbd80113452173226a76\jetified-firebase-common-19.5.0\AndroidManifest.xml:43:13-45:85
+99                android:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar"
+99-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\a8e7753e0381cbd80113452173226a76\jetified-firebase-common-19.5.0\AndroidManifest.xml:44:17-121
+100                android:value="com.google.firebase.components.ComponentRegistrar" />
+100-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\a8e7753e0381cbd80113452173226a76\jetified-firebase-common-19.5.0\AndroidManifest.xml:45:17-82
+101        </service> <!-- Needs to be explicitly declared on P+ -->
+102        <uses-library
+102-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\f6434d6edb2b5493051c45e189401dee\jetified-play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
+103            android:name="org.apache.http.legacy"
+103-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\f6434d6edb2b5493051c45e189401dee\jetified-play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
+104            android:required="false" />
+104-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\f6434d6edb2b5493051c45e189401dee\jetified-play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
+105
+106        <activity
+106-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\024ccf0e71a4e73d9795fc67b2da176c\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+107            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+107-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\024ccf0e71a4e73d9795fc67b2da176c\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+108            android:exported="false"
+108-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\024ccf0e71a4e73d9795fc67b2da176c\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+109            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+109-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\024ccf0e71a4e73d9795fc67b2da176c\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+110
+111        <provider
+111-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\a8e7753e0381cbd80113452173226a76\jetified-firebase-common-19.5.0\AndroidManifest.xml:26:9-31:39
+112            android:name="com.google.firebase.provider.FirebaseInitProvider"
+112-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\a8e7753e0381cbd80113452173226a76\jetified-firebase-common-19.5.0\AndroidManifest.xml:27:13-77
+113            android:authorities="com.example.recycleapp.firebaseinitprovider"
+113-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\a8e7753e0381cbd80113452173226a76\jetified-firebase-common-19.5.0\AndroidManifest.xml:28:13-72
+114            android:directBootAware="true"
+114-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\a8e7753e0381cbd80113452173226a76\jetified-firebase-common-19.5.0\AndroidManifest.xml:29:13-43
+115            android:exported="false"
+115-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\a8e7753e0381cbd80113452173226a76\jetified-firebase-common-19.5.0\AndroidManifest.xml:30:13-37
+116            android:initOrder="100" />
+116-->[com.google.firebase:firebase-common:19.5.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\a8e7753e0381cbd80113452173226a76\jetified-firebase-common-19.5.0\AndroidManifest.xml:31:13-36
+117
+118        <receiver
+118-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\9a3224ac64ff705c59c858b9cb9d100d\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:29:9-33:20
+119            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+119-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\9a3224ac64ff705c59c858b9cb9d100d\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:30:13-85
+120            android:enabled="true"
+120-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\9a3224ac64ff705c59c858b9cb9d100d\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:31:13-35
+121            android:exported="false" >
+121-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\9a3224ac64ff705c59c858b9cb9d100d\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:32:13-37
+122        </receiver>
+123
+124        <service
+124-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\9a3224ac64ff705c59c858b9cb9d100d\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:35:9-38:40
+125            android:name="com.google.android.gms.measurement.AppMeasurementService"
+125-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\9a3224ac64ff705c59c858b9cb9d100d\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:36:13-84
+126            android:enabled="true"
+126-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\9a3224ac64ff705c59c858b9cb9d100d\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:37:13-35
+127            android:exported="false" />
+127-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\9a3224ac64ff705c59c858b9cb9d100d\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:38:13-37
+128        <service
+128-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\9a3224ac64ff705c59c858b9cb9d100d\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:39:9-43:72
+129            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+129-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\9a3224ac64ff705c59c858b9cb9d100d\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:40:13-87
+130            android:enabled="true"
+130-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\9a3224ac64ff705c59c858b9cb9d100d\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:41:13-35
+131            android:exported="false"
+131-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\9a3224ac64ff705c59c858b9cb9d100d\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:42:13-37
+132            android:permission="android.permission.BIND_JOB_SERVICE" />
+132-->[com.google.android.gms:play-services-measurement:18.0.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\9a3224ac64ff705c59c858b9cb9d100d\jetified-play-services-measurement-18.0.0\AndroidManifest.xml:43:13-69
+133
+134        <meta-data
+134-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\fea1431fd2ad95e4625b7ea3e9d3ebdc\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+135            android:name="com.google.android.gms.version"
+135-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\fea1431fd2ad95e4625b7ea3e9d3ebdc\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+136            android:value="@integer/google_play_services_version" />
+136-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\Justin Siu\.gradle\caches\transforms-2\files-2.1\fea1431fd2ad95e4625b7ea3e9d3ebdc\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+137    </application>
+138
+139</manifest>

@@ -30,10 +30,10 @@ class TestFunction extends StatelessWidget {
             return Card(d[index]);
           },
           options: CarouselOptions(
-            autoPlay: true,
+            autoPlay: false,
             enlargeCenterPage: true,
-            viewportFraction: 0.9,
-            aspectRatio: 1.0,
+            enableInfiniteScroll: false,
+            aspectRatio: 0.7,
             initialPage: 0,
           ),
         );
@@ -45,16 +45,12 @@ class TestFunction extends StatelessWidget {
 class Card extends StatelessWidget {
   final DocumentSnapshot values;
   Card(this.values);
-  
-
-  
 
   Widget build(BuildContext context) {
-    final Map <String, dynamic> doc = values.data;
-    double value = MediaQuery.of(context).size.width;
+    final Map <String, dynamic> doc = values.data();
     return Container( 
-      width: (value / 10) * 8, 
-      margin: EdgeInsets.fromLTRB((value / 10) * 0.5, 0, 50, 50),
+      width: double.maxFinite,
+      height: double.maxFinite, 
       decoration: BoxDecoration( 
         borderRadius: BorderRadius.circular(50.0),
         color: Colors.white,
@@ -70,7 +66,7 @@ class Card extends StatelessWidget {
           Expanded(
             flex: 2,
             child: Text(
-              "$title",
+              "${doc['name']}",
               style: TextStyle(
                 fontSize: 20,
                 fontStyle: FontStyle.normal,
@@ -89,7 +85,7 @@ class Card extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "$count",
+                  "10",
                   style: TextStyle(
                     fontSize: 24,
                     fontStyle: FontStyle.normal,
@@ -97,7 +93,7 @@ class Card extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "recycled\n$subText",
+                  "recycled\nDone",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 15,
@@ -119,31 +115,35 @@ class Card extends StatelessWidget {
 class _MainUIState extends State<MainUI> {
   int index = 0;
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Expanded(
-          flex: 1,
-          child: SizedBox()
-        ),
-        Expanded(
-          flex: 1,
-          child: Text(
-            "Hello Team",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 25,
-              fontWeight: FontWeight.w300,
-              fontFamily: "Arial"
+    return Container(
+      width: double.infinity,
+      height: double.infinity,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Expanded(
+            flex: 1,
+            child: SizedBox()
+          ),
+          Expanded(
+            flex: 1,
+            child: Text(
+              "Hello Team",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.w300,
+                fontFamily: "Arial"
+              ),
             ),
           ),
-        ),
-        Expanded ( 
-          flex: 9,
-          child: TestFunction()          
-        ),
-      ],
+          Expanded ( 
+            flex: 8,
+            child: TestFunction()          
+          ),
+        ],
+      )
     );
   }
 }
@@ -173,7 +173,7 @@ class _CreateStatsPageState extends State<StatsPage> {
                   children: [
                     Container(
                       width: double.infinity,
-                      height: double.maxFinite,
+                      height: double.infinity,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(
                           bottomRight: Radius.circular(40),

@@ -11,21 +11,27 @@ class MyMap extends StatefulWidget {
 class _MyMapState extends State<MyMap> {
   Completer<GoogleMapController> _controller = Completer();
 
-  static final CameraPosition _kGooglePlex = CameraPosition(
-    target: LatLng(37.42796133580664, -122.085749655962),
-    zoom: 14.4746,
-  );
+  void _onMapCreated(GoogleMapController controller) {
+    _controller.complete(controller);
+  }
 
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
       height: double.maxFinite,
-      decoration: BoxDecoration(
+      child: ClipRRect(
         borderRadius: BorderRadius.only(
           bottomRight: Radius.circular(40),
           bottomLeft: Radius.circular(40),
         ),
-        color: Colors.orange
+        child: GoogleMap(
+          onMapCreated: _onMapCreated,
+          zoomControlsEnabled: false,
+          initialCameraPosition: CameraPosition(
+            target: LatLng(37.42796133580664, -122.085749655962),
+            zoom: 12,
+          ),
+        ),
       ),
     );
   }

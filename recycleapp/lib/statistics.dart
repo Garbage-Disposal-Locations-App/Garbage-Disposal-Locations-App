@@ -1,8 +1,7 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'all.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class MainUI extends StatefulWidget{
   _MainUIState createState() => _MainUIState();
@@ -14,7 +13,14 @@ class Card extends StatelessWidget {
   final String subText;
   Card(this.title, this.subText, this.count);
 
+  
+
   Widget build(BuildContext context) {
+    FirebaseFirestore firestore = FirebaseFirestore.instance;
+    CollectionReference users = firestore.collection('TestData');
+    Future<DocumentSnapshot> document = users.doc('MNgZPtY0Y8LePIKjtbJw').get();
+    print(document);
+
     return Container( 
       width: double.maxFinite,
       height: double.maxFinite,
@@ -30,7 +36,7 @@ class Card extends StatelessWidget {
         children: [
           Expanded(
             flex: 1,
-            child: SizedBox(),
+            child: SizedBox()
           ),
           Expanded(
             flex: 2,
@@ -89,13 +95,13 @@ class _MainUIState extends State<MainUI> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Expanded(
-          flex: 2,
+          flex: 1,
           child: SizedBox()
         ),
         Expanded(
           flex: 1,
           child: Text(
-            "Hello Nishanth",
+            "Hello Team",
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 25,
@@ -114,17 +120,14 @@ class _MainUIState extends State<MainUI> {
                   Card("Paper", "paper", 20),
                   Card("Glass", "glass", 100)
                 ], 
-                
               //Slider Container properties 
                 options: CarouselOptions( 
                   height: (MediaQuery.of(context).size.height / 8) * 5, 
                   enlargeCenterPage: true, 
-                  autoPlay: false,
                   autoPlayCurve: Curves.fastOutSlowIn, 
                   enableInfiniteScroll: false, 
                   autoPlayAnimationDuration: Duration(milliseconds: 800), 
                   viewportFraction: 0.8, 
-                  
                 ), 
               ), 
             ], 

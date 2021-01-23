@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
               Column(
                 children: [
                   Expanded(
-                    flex: 9,
+                    flex: 10,
                     child: MyMap()
                   ),
                   Expanded(
@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
                   )
                 ]
               ),
-              TopBar(0.6, 0.05, 0.6, Color(0xff58a31f)),
+              TopBar(0.8, 0.4, 0.6, Color(0xff58a31f)),
             ]
           )
         )

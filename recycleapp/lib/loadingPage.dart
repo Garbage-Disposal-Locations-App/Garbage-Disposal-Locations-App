@@ -17,7 +17,7 @@ class _SecondLoadState extends State<SecondLoad> with TickerProviderStateMixin {
       vsync: this,
       duration: Duration(seconds: 2)
     );
-    Timer(Duration(seconds: 7), () => _animationControl.forward());
+    Timer(Duration(seconds: 5), () => _animationControl.forward());
     super.initState();
   }
 

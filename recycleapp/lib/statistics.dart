@@ -101,15 +101,6 @@ class Card extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                         letterSpacing: 1.1),
                   ),
-                  //Add button action here
-                  FloatingActionButton(
-                    onPressed: () {},
-                    child: Icon(Icons.add, color: Color(0xffacd8e3)),
-                    backgroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(16.0)),
-                        side: BorderSide(color: Color(0xffacd8e3), width: 4.0)),
-                  ),
                 ],
               ),
             )

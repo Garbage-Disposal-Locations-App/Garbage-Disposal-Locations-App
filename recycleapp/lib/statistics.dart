@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'all.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'dart:io';
 
 class MainUI extends StatefulWidget {
   _MainUIState createState() => _MainUIState();
@@ -11,7 +10,7 @@ class MainUI extends StatefulWidget {
 class TestFunction extends StatelessWidget {
   Widget build(BuildContext context) {
     FirebaseFirestore firestore = FirebaseFirestore.instance;
-    CollectionReference users = firestore.collection('TestData');
+    CollectionReference users = firestore.collection('RecycleData');
 
     return StreamBuilder<QuerySnapshot>(
       stream: users.snapshots(),
@@ -25,7 +24,7 @@ class TestFunction extends StatelessWidget {
         }
         List<DocumentSnapshot> d = snapshot.data.docs;
         return CarouselSlider.builder(
-          itemCount: 2,
+          itemCount: d.length,
           itemBuilder: (context, int index) {
             return Card(d[index]);
           },
@@ -42,15 +41,17 @@ class TestFunction extends StatelessWidget {
   }
 }
 
-int _val = 0;
 
 class Card extends StatelessWidget {
   final DocumentSnapshot values;
   Card(this.values);
 
+
   @override
   Widget build(BuildContext context) {
     final Map<String, dynamic> doc = values.data();
+    final String n = (doc['Category']).toLowerCase();
+    final String name = "assets/images/" + doc['Category'] + ".png";
     return Container(
         width: double.maxFinite,
         height: double.maxFinite,
@@ -66,7 +67,7 @@ class Card extends StatelessWidget {
             Expanded(
               flex: 3,
               child: Text(
-                "${doc['name']}",
+                "${doc['Category']}",
                 style: TextStyle(
                     fontSize: 20,
                     fontStyle: FontStyle.normal,
@@ -76,15 +77,15 @@ class Card extends StatelessWidget {
             ),
             Expanded(
                 flex: 9,
-                child: Image(image: AssetImage('assets/images/Plastic.png'))),
-            Expanded(flex: 3, child: SizedBox()),
+                child: Image(image: AssetImage(name))
+            ),
             Expanded(
               flex: 9,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(
-                    "$_val",
+                    "${doc['Count']}",
                     style: TextStyle(
                       fontSize: 50,
                       fontStyle: FontStyle.normal,
@@ -92,7 +93,7 @@ class Card extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    "Recycled\n${doc['name']}",
+                    "Recycled\n$n",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         fontSize: 20,
@@ -100,15 +101,6 @@ class Card extends StatelessWidget {
                         fontStyle: FontStyle.normal,
                         fontWeight: FontWeight.w500,
                         letterSpacing: 1.1),
-                  ),
-                  //Add button action here
-                  FloatingActionButton(
-                    onPressed: () {},
-                    child: Icon(Icons.add, color: Color(0xffacd8e3)),
-                    backgroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(16.0)),
-                        side: BorderSide(color: Color(0xffacd8e3), width: 4.0)),
                   ),
                 ],
               ),

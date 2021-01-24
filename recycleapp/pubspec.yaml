@@ -24,8 +24,8 @@ dependencies:
   flutter:
     sdk: flutter
   carousel_slider: ^2.3.1
-  firebase_core: ^0.6.0
-  cloud_firestore: ^0.15.0
+  firebase_core: ^0.7.0
+  cloud_firestore: ^0.16.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -58,6 +58,9 @@ flutter:
 
   assets: 
     - assets/images/Plastic.png
+    - assets/images/rec3.png
+    - assets/images/rec1.png
+
   #  - assets/images/Garbage.png
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -9,32 +9,32 @@ class MyMap extends StatefulWidget {
 }
 
 class _MyMapState extends State<MyMap> {
-  
   GoogleMapController _mycontrol;
   Map<MarkerId, Marker> locations = <MarkerId, Marker>{};
+
   
   int control = 0;
   BitmapDescriptor custom;
-  void createMarker() async{
-    custom = await BitmapDescriptor.fromAssetImage(ImageConfiguration(), "assets/images/rec1.png");
+  void createMarker() async {
+    custom = await BitmapDescriptor.fromAssetImage(
+        ImageConfiguration(), "assets/images/rec1.png");
   }
 
-  void initMarker(specify, specifyID) async{
+  void initMarker(specify, specifyID) async {
     createMarker();
     final MarkerId markerId = MarkerId(specifyID);
     final Marker marker = Marker(
-      markerId: markerId,
-      position: LatLng(specify['Location'].latitude, specify['Location'].longitude),
-      infoWindow: InfoWindow(title: specify['Name']),
-      icon: custom
-    );
+        markerId: markerId,
+        position:
+            LatLng(specify['Location'].latitude, specify['Location'].longitude),
+        infoWindow: InfoWindow(title: specify['Name']),
+        icon: custom);
     setState(() {
       locations[markerId] = marker;
     });
-    
   }
 
-  populateLocations() async{
+  populateLocations() async {
     FirebaseFirestore.instance.collection('TestMakers').get().then((doc) {
       if (doc.docs.isNotEmpty) {
         for (int i = 0; i < doc.docs.length; i++) {
@@ -48,12 +48,12 @@ class _MyMapState extends State<MyMap> {
     createMarker();
     populateLocations();
     super.initState();
-    
-  }  
+  }
 
   @override
   Widget build(BuildContext context) {
     return Container(
+
       width: double.infinity,
       height: double.maxFinite,
       child: Stack(

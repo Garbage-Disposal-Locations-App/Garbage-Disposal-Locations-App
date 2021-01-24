@@ -1,56 +1,38 @@
 # Garbage-Disposal-Locations-App For CUNY Hackathon of 2021 @Jan23-24
 ## Team Members
-- Farhene Sultana
 - Nishanth Prajith
-- Maisa Ahmad
+- Farhene Sultana
 - Justin Siu
-
-## How to Run Program
-- Install Flutter on Computer or PC by going to this website [Flutter.dev](https://flutter.dev/docs/get-started/install)
-- Will add more steps later 
+- Maisa Ahmad
 
 ## Summary of Project
 Our project aims to help users find all the garbage disposal locations near them. They would open the app on their phones to see on the maps to find the nearest one.
 We plan on having every user have an account for this application.
-
 
 ## Functional Goals
 - Have every user be able to sign in to an account
   - Each account would have some form of stats of how much they either threw away, or recycled.
 - Each user could navigate around the map and see for any garbage disposal locations near them in realtime.
 
-# UI/FrontEnd/Backend Goals
-
-## FrontEnd
-  - Use Flutter with Dart or Javascript to make the design of the project
-  - Also use Google Maps API, perhaps Geolocation or general map API for the user to be able to use and navigate around.
-## UI
-  - Use Glass marker style for transparency for user viewing satisfaction
-## BackEnd
-  - Use SQLite as our backend technology to keep track of custom locations of garbage locations.
-
+## How to Run Program
+1. Install Flutter on Computer or PC by going to this website [Flutter.dev](https://flutter.dev/docs/get-started/install)
+2. To run this project, you must be in the flutter channel dev, not in the beta, nor master, nor stable channels.
+3. To check your flutter channel, type in your terminal: "flutter channel"
+4. To switch over channels, type in your terminal: "flutter channel dev"
+  - If your computer fails to switch due to error code 1 or git aborting issues, check out this link: [Fix Flutter Channel Switching Here](https://stackoverflow.com/questions/61659910/flutter-error-unable-to-create-dart-snapshot-for-flutter-tool/62140885#62140885?newreg=deb25020c7d1466b8370c7017491bda3)
+5. We used Visual Studio Code to run this. Download VScode here if you don't have it: [Visual Studio Code](https://code.visualstudio.com/download)
+  - Open this folder in your VS code editor, and follow the next steps.
+6. Open terminal, and cd to the "Garbage-Disposal-Locations-App" folder, then cd to "recycleapp" folder, which is the root folder.
+7. Type in cmd, "flutter pub get" to get necessary build and packages.
+  - If you have errors here still with the files, chances are you are not in the flutter channel dev.
+8. Next, connect your Android phone to your computer and type, "flutter devices" to see if its connected. If not, you have to go to settings to enable that action to have your computer to recognize your phone. If you do not have an android, try using android studio, or an android emulator through VS Code. 
+9. Then Start debugging, or if Android phone connected, type, "flutter run". 
 
 # Issues
 - Auto Layout could be an issue
-- Google Maps could not be previewed on the app
-- Doesn't have the desktop embedding, well limited in terms of Google Maps API
-  - Nishanth keeps getting compatability errors or Null error.
+- Doesn't have the desktop embedding
 
 
 # Things to do
-- Update the loading screen 
-- Fix up the Google Maps Preview (shows orange instead) using Google Maps API
-   - Google Maps APi has markers we could use.
-   - We can put custom locations and then using user location we can sort out the closest garbage location near them.
-   - We can style the map that we are using mapstyle with like Google.com
-      - We can customize general colorscapes of the features on the map.
-      - We get a json file to copy and paste to flutter and the map will be rendered.
-- Find data or put in custom data of garbage disposal locations
-- Fixing UI layout and how will it look with the map?
-- Add sign-in authentication (bonus)
-
-# Help
-To run this project, you must be in the flutter channel dev, not in the beta, nor master, nor stable channels.
-- To check your flutter channel, type in your terminal: "flutter channel"
-- To switch over channels, type in your terminal: "flutter channel dev"
-  - If your computer fails to switch due to error code 1 or git aborting issues, check out this link: [Fix Flutter Channel Switching Here](https://stackoverflow.com/questions/61659910/flutter-error-unable-to-create-dart-snapshot-for-flutter-tool/62140885#62140885?newreg=deb25020c7d1466b8370c7017491bda3)
+- Add sign-in authentication (Next Steps)
+- Have it deployed somewhere?

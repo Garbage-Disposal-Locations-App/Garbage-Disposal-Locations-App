@@ -37,12 +37,12 @@ class _SecondLoadState extends State<SecondLoad> with TickerProviderStateMixin {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.nature, size: 40, color: Colors.green),
+                    Icon(Icons.nature, size: 45, color: Colors.green),
                     RichText(
                         textAlign: TextAlign.center,
                         text: TextSpan(
                             style: new TextStyle(
-                              fontSize: 16.0,
+                              fontSize: 19.0,
                               color: Colors.black,
                             ),
                             children: <TextSpan>[

@@ -12,6 +12,7 @@ class _MyMapState extends State<MyMap> {
   GoogleMapController _mycontrol;
   Map<MarkerId, Marker> locations = <MarkerId, Marker>{};
 
+  
   int control = 0;
   BitmapDescriptor custom;
   void createMarker() async {
@@ -52,185 +53,204 @@ class _MyMapState extends State<MyMap> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: double.infinity,
-        height: double.maxFinite,
-        child: Stack(
-          alignment: AlignmentDirectional.bottomCenter,
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.only(
-                bottomRight: Radius.circular(40),
-                bottomLeft: Radius.circular(40),
-              ),
-              child: GoogleMap(
-                markers: Set<Marker>.of(locations.values),
-                onMapCreated: (GoogleMapController controller) {
-                  _mycontrol = controller;
-                  controller.setMapStyle(Utils.mapStyle);
-                },
-                zoomControlsEnabled: false,
-                initialCameraPosition: CameraPosition(
-                  target: LatLng(40.7831, -73.9712),
-                  zoom: 12,
-                ),
+
+      width: double.infinity,
+      height: double.maxFinite,
+      child: Stack(
+        alignment: AlignmentDirectional.bottomCenter,
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.only(
+              bottomRight: Radius.circular(40),
+              bottomLeft: Radius.circular(40),
+            ),
+            child: GoogleMap(
+              markers: Set<Marker>.of(locations.values),
+              onMapCreated: (GoogleMapController controller) {
+                _mycontrol = controller;
+                controller.setMapStyle(Utils.mapStyle);
+              },
+              zoomControlsEnabled: false,
+
+              initialCameraPosition: CameraPosition(
+                target: LatLng(40.7831, -73.9712),
+                zoom: 12,
               ),
             ),
-            Container(
-                width: double.infinity,
-                height: 50,
-                margin: EdgeInsets.fromLTRB(20, 0, 20, 0),
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          if (control == 1) {
-                            control = 0;
-                          } else {
-                            control = 1;
-                          }
-                        });
-                      },
-                      child: Container(
-                        width: 90,
-                        height: 30,
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(40),
-                            color: control == 1 ? Colors.green : Colors.white,
-                            border: Border.all(
-                                width: 1.0, color: const Color(0xFF009900))),
-                        margin: EdgeInsets.only(bottom: 10, right: 20),
-                        child: Text(
-                          "Plastic",
-                          style: TextStyle(
-                            color: control == 1 ? Colors.white : Colors.black,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
+          ),
+          Container(
+            width: double.infinity,
+            height: 50,
+            margin: EdgeInsets.fromLTRB(20, 0, 20, 0),
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      if (control == 1) {
+                        control = 0;
+                      } else {
+                        control = 1;
+                      }
+                    });
+                  },
+                  child: Container(
+                    width: 90,
+                    height: 30,
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(40),
+                      color: control == 1 ? Colors.green : Colors.white,
+                      border: Border.all(width: 1.0, color: const Color(0xFF009900))
                     ),
-                    GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          if (control == 2) {
-                            control = 0;
-                          } else {
-                            control = 2;
-                          }
-                        });
-                      },
-                      child: Container(
-                        width: 90,
-                        height: 30,
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(40),
-                            color: control == 2 ? Colors.green : Colors.white,
-                            border: Border.all(
-                                width: 1.0, color: const Color(0xFF009900))),
-                        margin: EdgeInsets.only(bottom: 10, right: 20),
-                        child: Text(
-                          "Paper",
-                          style: TextStyle(
-                            color: control == 2 ? Colors.white : Colors.black,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
+                    margin: EdgeInsets.only(
+                      bottom: 10,
+                      right: 20
                     ),
-                    GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          if (control == 3) {
-                            control = 0;
-                          } else {
-                            control = 3;
-                          }
-                        });
-                      },
-                      child: Container(
-                        width: 90,
-                        height: 30,
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(40),
-                            color: control == 3 ? Colors.green : Colors.white,
-                            border: Border.all(
-                                width: 1.0, color: const Color(0xFF009900))),
-                        margin: EdgeInsets.only(bottom: 10, right: 20),
-                        child: Text(
-                          "Glass",
-                          style: TextStyle(
-                            color: control == 3 ? Colors.white : Colors.black,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
+                    child: Text(
+                      "Plastic", 
+                      style: TextStyle(
+                        color: control == 1 ? Colors.white : Colors.black,
                       ),
+                      textAlign: TextAlign.center,
                     ),
-                    GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          if (control == 4) {
-                            control = 0;
-                          } else {
-                            control = 4;
-                          }
-                        });
-                      },
-                      child: Container(
-                        width: 90,
-                        height: 30,
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(40),
-                            color: control == 4 ? Colors.green : Colors.white,
-                            border: Border.all(
-                                width: 1.0, color: const Color(0xFF009900))),
-                        margin: EdgeInsets.only(bottom: 10, right: 20),
-                        child: Text(
-                          "Food",
-                          style: TextStyle(
-                            color: control == 4 ? Colors.white : Colors.black,
-                          ),
-                          textAlign: TextAlign.center,
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      if (control == 2) {
+                        control = 0;
+                      } else {
+                        control = 2;
+                      }
+                    });
+                  },
+                  child: Container(
+                    width: 90,
+                    height: 30,
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(40),
+                      color: control == 2 ? Colors.green : Colors.white,
+                      border: Border.all(width: 1.0, color: const Color(0xFF009900))
+                    ),
+                    margin: EdgeInsets.only(
+                      bottom: 10,
+                      right: 20
+                    ),
+                    child: Text(
+                      "Paper", 
+                      style: TextStyle(
+                          color: control == 2 ? Colors.white : Colors.black,
                         ),
-                      ),
+                      textAlign: TextAlign.center,
                     ),
-                    GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          if (control == 5) {
-                            control = 0;
-                          } else {
-                            control = 5;
-                          }
-                        });
-                      },
-                      child: Container(
-                        width: 90,
-                        height: 30,
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(40),
-                            color: control == 5 ? Colors.green : Colors.white,
-                            border: Border.all(
-                                width: 1.0, color: const Color(0xFF009900))),
-                        margin: EdgeInsets.only(bottom: 10, right: 20),
-                        child: Text(
-                          "Garbage",
-                          style: TextStyle(
-                            color: control == 5 ? Colors.white : Colors.black,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      if (control == 3) {
+                        control = 0;
+                      } else {
+                        control = 3;
+                      }
+                    });
+                  },
+                  child: Container(
+                    width: 90,
+                    height: 30,
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(40),
+                      color: control == 3 ? Colors.green : Colors.white,
+                      border: Border.all(width: 1.0, color: const Color(0xFF009900))
                     ),
-                  ],
-                ))
-          ],
-        ));
+                    margin: EdgeInsets.only(
+                      bottom: 10,
+                      right: 20
+                    ),
+                    child: Text(
+                      "Glass", 
+                      style: TextStyle(
+                        color: control == 3 ? Colors.white : Colors.black,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      if (control == 4) {
+                        control = 0;
+                      } else {
+                        control = 4;
+                      }
+                    });
+                  },
+                  child: Container(
+                    width: 90,
+                    height: 30,
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(40),
+                      color: control == 4 ? Colors.green : Colors.white,
+                      border: Border.all(width: 1.0, color: const Color(0xFF009900))
+                    ),
+                    margin: EdgeInsets.only(
+                      bottom: 10,
+                      right: 20
+                    ),
+                    child: Text(
+                      "Food", 
+                      style: TextStyle(
+                        color: control == 4 ? Colors.white : Colors.black,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      if (control == 5) {
+                        control = 0;
+                      } else {
+                        control = 5;
+                      }
+                    });
+                  },
+                  child: Container(
+                    width: 90,
+                    height: 30,
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(40),
+                      color: control == 5 ? Colors.green : Colors.white,
+                      border: Border.all(width: 1.0, color: const Color(0xFF009900))
+                    ),
+                    margin: EdgeInsets.only(
+                      bottom: 10,
+                      right: 20
+                    ),
+                    child: Text(
+                      "Garbage", 
+                      style: TextStyle(
+                        color: control == 5 ? Colors.white : Colors.black,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ),
+              ],
+            )
+          )
+        ],
+      )
+    );
   }
 }
 

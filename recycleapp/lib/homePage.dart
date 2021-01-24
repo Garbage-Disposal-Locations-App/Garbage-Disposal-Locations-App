@@ -26,21 +26,31 @@ class _HomePageState extends State<HomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Scaffold(
-            body: Container(
-                width: double.infinity,
-                height: double.infinity,
-                color: Colors.white,
-                child: Stack(children: [
-                  Column(children: [
-                    Expanded(
-                      flex: 10,
-                      child: MyMap(),
-                    ),
-                    Expanded(flex: 1, child: BottomNav(1))
-                  ]),
-                  TopBar(0.8, 0.4, 0.6, Color(0xff58a31f)),
-                ]))));
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: Container(
+          width: double.infinity,
+          height: double.infinity,
+          color: Colors.white,
+          child: Stack(
+            children: [
+              Column(
+                children: [
+                  Expanded(
+                    flex: 10,
+                    child: MyMap(),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: BottomNav(1)
+                  )
+                ]
+              ),
+              TopBar(0.8, 0.4, 0.6, Color(0xff58a31f)),
+            ]
+          )
+        )
+      )
+    ); 
   }
 }

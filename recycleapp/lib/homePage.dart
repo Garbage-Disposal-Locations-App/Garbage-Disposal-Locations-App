@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Expanded(
                     flex: 10,
-                    child: MyMap()
+                    child: MyMap(),
                   ),
                   Expanded(
                     flex: 1,

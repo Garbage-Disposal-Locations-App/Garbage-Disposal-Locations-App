@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-
 class MyMap extends StatefulWidget {
   _MyMapState createState() => _MyMapState();
 }
@@ -15,6 +14,7 @@ class _MyMapState extends State<MyMap> {
     _controller.complete(controller);
   }
 
+  @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
@@ -26,9 +26,9 @@ class _MyMapState extends State<MyMap> {
         ),
         child: GoogleMap(
           onMapCreated: _onMapCreated,
-          zoomControlsEnabled: false,
+          zoomControlsEnabled: true,
           initialCameraPosition: CameraPosition(
-            target: LatLng(37.42796133580664, -122.085749655962),
+            target: LatLng(40.730610,-73.935242),
             zoom: 12,
           ),
         ),

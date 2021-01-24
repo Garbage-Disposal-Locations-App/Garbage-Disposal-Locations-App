@@ -4,7 +4,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'dart:io';
 
-class MainUI extends StatefulWidget{
+class MainUI extends StatefulWidget {
   _MainUIState createState() => _MainUIState();
 }
 
@@ -12,7 +12,7 @@ class TestFunction extends StatelessWidget {
   Widget build(BuildContext context) {
     FirebaseFirestore firestore = FirebaseFirestore.instance;
     CollectionReference users = firestore.collection('TestData');
-    
+
     return StreamBuilder<QuerySnapshot>(
       stream: users.snapshots(),
       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -25,7 +25,7 @@ class TestFunction extends StatelessWidget {
         }
         List<DocumentSnapshot> d = snapshot.data.docs;
         return CarouselSlider.builder(
-          itemCount: 2, 
+          itemCount: 2,
           itemBuilder: (context, int index) {
             return Card(d[index]);
           },
@@ -42,73 +42,79 @@ class TestFunction extends StatelessWidget {
   }
 }
 
+int _val = 0;
+
 class Card extends StatelessWidget {
   final DocumentSnapshot values;
   Card(this.values);
 
+  @override
   Widget build(BuildContext context) {
-    final Map <String, dynamic> doc = values.data();
-    return Container( 
-      width: double.maxFinite,
-      height: double.maxFinite, 
-      decoration: BoxDecoration( 
-        borderRadius: BorderRadius.circular(50.0),
-        color: Colors.white,
-      ), 
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Expanded(
-            flex: 1,
-            child: SizedBox()
-          ),
-          Expanded(
-            flex: 2,
-            child: Text(
-              "${doc['name']}",
-              style: TextStyle(
-                fontSize: 20,
-                fontStyle: FontStyle.normal,
-                fontWeight: FontWeight.w500,
-                letterSpacing: 1
+    final Map<String, dynamic> doc = values.data();
+    return Container(
+        width: double.maxFinite,
+        height: double.maxFinite,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(50.0),
+          color: Colors.white,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(flex: 1, child: SizedBox()),
+            Expanded(
+              flex: 3,
+              child: Text(
+                "${doc['name']}",
+                style: TextStyle(
+                    fontSize: 20,
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.w500,
+                    letterSpacing: 1),
               ),
             ),
-          ),
-          Expanded(
-            flex: 8,
-            child: SizedBox()
-          ),
-          Expanded(
-            flex: 3,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "10",
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontStyle: FontStyle.normal,
-                    fontWeight: FontWeight.w700,
+            Expanded(
+                flex: 9,
+                child: Image(image: AssetImage('assets/images/Plastic.png'))),
+            Expanded(flex: 3, child: SizedBox()),
+            Expanded(
+              flex: 9,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text(
+                    "$_val",
+                    style: TextStyle(
+                      fontSize: 50,
+                      fontStyle: FontStyle.normal,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
-                ),
-                Text(
-                  "recycled\nDone",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 15,
-                    color: Color(0xff919191),
-                    fontStyle: FontStyle.normal,
-                    fontWeight: FontWeight.w100,
-                    letterSpacing: 1.1
+                  Text(
+                    "Recycled\n${doc['name']}",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontSize: 20,
+                        color: Color(0xff919191),
+                        fontStyle: FontStyle.normal,
+                        fontWeight: FontWeight.w500,
+                        letterSpacing: 1.1),
                   ),
-                ),
-              ],
-            ),
-          )
-        ],
-      )
-    ); 
+                  //Add button action here
+                  FloatingActionButton(
+                    onPressed: () {},
+                    child: Icon(Icons.add, color: Color(0xffacd8e3)),
+                    backgroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(16.0)),
+                        side: BorderSide(color: Color(0xffacd8e3), width: 4.0)),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ));
   }
 }
 
@@ -116,85 +122,63 @@ class _MainUIState extends State<MainUI> {
   int index = 0;
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
-      height: double.infinity,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Expanded(
-            flex: 1,
-            child: SizedBox()
-          ),
-          Expanded(
-            flex: 1,
-            child: Text(
-              "Hello Team",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.w300,
-                fontFamily: "Arial"
+        width: double.infinity,
+        height: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(flex: 1, child: SizedBox()),
+            Expanded(
+              flex: 1,
+              child: Text(
+                "Hello Team",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.w300,
+                    fontFamily: "Arial"),
               ),
             ),
-          ),
-          Expanded ( 
-            flex: 8,
-            child: TestFunction()          
-          ),
-        ],
-      )
-    );
+            Expanded(flex: 8, child: TestFunction()),
+          ],
+        ));
   }
 }
 
-class CardList {
-}
+class CardList {}
 
-
-class StatsPage extends StatefulWidget{
+class StatsPage extends StatefulWidget {
   _CreateStatsPageState createState() => _CreateStatsPageState();
 }
-  
+
 class _CreateStatsPageState extends State<StatsPage> {
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Container(
-          color: Colors.white,
-          width: double.infinity,
-          height: double.infinity,
-          child: Column(
-            children: [
-              Expanded(
-                flex: 9,
-                child: Stack(
-                  children: [
-                    Container(
-                      width: double.infinity,
-                      height: double.infinity,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                          bottomRight: Radius.circular(40),
-                          bottomLeft: Radius.circular(40)
-                        ),
-                        color: Color(0xffacd8e3)
-                      ),
-                      child: MainUI()
-                    ),
-                    TopBar(0, 0, 0, Color(0xff58a31f))
-                  ],
-                )
-              ),
-              Expanded(
-                flex: 1,
-                child: BottomNav(0)
-              )
-            ]
-          )
-        )
-      )
-    );
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+            body: Container(
+                color: Colors.white,
+                width: double.infinity,
+                height: double.infinity,
+                child: Column(children: [
+                  Expanded(
+                      flex: 9,
+                      child: Stack(
+                        children: [
+                          Container(
+                              width: double.infinity,
+                              height: double.infinity,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                      bottomRight: Radius.circular(40),
+                                      bottomLeft: Radius.circular(40)),
+                                  color: Color(0xffacd8e3)),
+                              child: MainUI()),
+                          TopBar(0, 0, 0, Color(0xff58a31f))
+                        ],
+                      )),
+                  Expanded(flex: 1, child: BottomNav(0))
+                ]))));
   }
 }

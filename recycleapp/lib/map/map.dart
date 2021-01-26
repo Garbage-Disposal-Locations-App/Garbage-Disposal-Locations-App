@@ -35,7 +35,7 @@ class _MyMapState extends State<MyMap> {
       if (control == 0) {
         check = true;
       } else {
-        if (specify['Category'][categories[control]] == true) {
+        if (specify['Category'][categories[control - 1]] == true) {
           check = true;
         }
       }

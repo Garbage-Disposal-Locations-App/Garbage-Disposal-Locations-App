@@ -11,6 +11,7 @@ class MyMap extends StatefulWidget {
 class _MyMapState extends State<MyMap> {
   GoogleMapController _mycontrol;
   Map<MarkerId, Marker> locations = <MarkerId, Marker>{};
+  var categories = ["Plastic", "Paper", "Glass", "Food", "Garbage"];
 
   
   int control = 0;
@@ -30,7 +31,17 @@ class _MyMapState extends State<MyMap> {
         infoWindow: InfoWindow(title: specify['Name']),
         icon: custom);
     setState(() {
-      locations[markerId] = marker;
+      bool check = false;
+      if (control == 0) {
+        check = true;
+      } else {
+        if (specify['Category'][categories[control]] == true) {
+          check = true;
+        }
+      }
+      if (check) {
+        locations[markerId] = marker;
+      }
     });
   }
 
@@ -48,6 +59,11 @@ class _MyMapState extends State<MyMap> {
     createMarker();
     populateLocations();
     super.initState();
+  }
+
+  run() {
+    populateLocations();
+    locations.clear();
   }
 
   @override
@@ -93,6 +109,7 @@ class _MyMapState extends State<MyMap> {
                       } else {
                         control = 1;
                       }
+                      run();
                     });
                   },
                   child: Container(
@@ -125,6 +142,7 @@ class _MyMapState extends State<MyMap> {
                       } else {
                         control = 2;
                       }
+                      run();
                     });
                   },
                   child: Container(
@@ -157,6 +175,7 @@ class _MyMapState extends State<MyMap> {
                       } else {
                         control = 3;
                       }
+                      run();
                     });
                   },
                   child: Container(
@@ -189,6 +208,7 @@ class _MyMapState extends State<MyMap> {
                       } else {
                         control = 4;
                       }
+                      run();
                     });
                   },
                   child: Container(
@@ -221,6 +241,7 @@ class _MyMapState extends State<MyMap> {
                       } else {
                         control = 5;
                       }
+                      run();
                     });
                   },
                   child: Container(

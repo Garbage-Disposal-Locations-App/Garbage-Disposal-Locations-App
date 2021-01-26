@@ -10,7 +10,7 @@ void main() async {
       statusBarBrightness: Brightness.light));
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MyApp());
+  runApp(HomePage());
 }
 
 class MyApp extends StatelessWidget {
